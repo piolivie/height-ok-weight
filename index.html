@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Height-OK-Weight</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Height-OK-Weight">
+  <meta name="author" content="Piolivie">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Height-OK-Weight</h1>
+    <h2>Calculates Weight that is OK for your Height</h2>
+    <p>Piolivie<br/>Wanna-be-Data-Scientist</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Why Height-OK-Weight?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Obesitas is a serious health problem in modern society. </li>
+<li>Height-OK-Weight calculates lower and upper bound for normal weight of Adults</li>
+<li>OK means a Body Mass Index (BMI) between 18.5 and 24.9.</li>
+<li>BMI Categories: 
+
+<ul>
+<li>Underweight = &lt;18.5</li>
+<li>Normal weight = 18.5-24.9 </li>
+<li>Overweight = 25-29.9 </li>
+<li>Obesity = BMI of 30 or greater</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Disclaimer</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The information contained in this presentation is for general information purposes only. </li>
+<li>Any reliance you place on such information is therefore strictly at your own risk.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Normal Weight Calculation</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Lower Bound Weight
+\[ \bbox[yellow,20px] 
+{
+Lower\,Bound\,Weight = 18.5 \times \Big(\frac{\,Heigth\,}{100}\,\,\Big)^2
+}
+\]</li>
+<li><p>Upper Bound Weight
+\[ \bbox[yellow,20px]
+{
+Upper\,Bound\,Weight = 24.9 \times \Big(\frac{\,Heigth\,}{100}\,\,\Big)^2
+}
+\]</p></li>
+<li><p>Weight expressed in kilogram (kg) given a Height expressed in centimeter (cm)</p></li>
+<li><p>For example, adult person measuring 175 cm has healthy weight between 57 kg and 76 kg</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Demo</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>R function calculating healthy weight range (okg) of adult person given his/her height (cm)</li>
+</ul>
+
+<pre><code class="r">okg &lt;- function(cm) {round(c(18.5,24.9)*(cm/100)^2,0)}
+</code></pre>
+
+<ul>
+<li>Healthy weight of adult person measuring 175 cm</li>
+</ul>
+
+<pre><code class="r">okg(cm=175)
+</code></pre>
+
+<ul>
+<li>Is between 57 kg and 76 kg</li>
+</ul>
+
+<pre><code>## [1] 57 76
+</code></pre>
+
+<ul>
+<li>Check it also out on <a href="http://piolivie.shinyapps.io/height-ok-weight/">http://piolivie.shinyapps.io/height-ok-weight/</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Why Height-OK-Weight?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Disclaimer'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Normal Weight Calculation'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Demo'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

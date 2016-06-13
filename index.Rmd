@@ -1,0 +1,72 @@
+---
+title       : Height-OK-Weight
+subtitle    : Calculates Weight that is OK for your Height 
+author      : Piolivie
+job         : Wanna-be-Data-Scientist
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]     # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Why Height-OK-Weight?
+
+* Obesitas is a serious health problem in modern society. 
+* Height-OK-Weight calculates lower and upper bound for normal weight of Adults
+* OK means a Body Mass Index (BMI) between 18.5 and 24.9.
+* BMI Categories: 
+  * Underweight = <18.5
+  * Normal weight = 18.5-24.9 
+  * Overweight = 25-29.9 
+  * Obesity = BMI of 30 or greater
+
+--- .class #id 
+
+## Disclaimer
+
+* The information contained in this presentation is for general information purposes only. 
+* Any reliance you place on such information is therefore strictly at your own risk.
+
+--- .class #id 
+
+## Normal Weight Calculation
+
+* Lower Bound Weight
+$$ \bbox[yellow,20px] 
+{
+Lower\,Bound\,Weight = 18.5 \times \Big(\frac{\,Heigth\,}{100}\,\,\Big)^2
+}
+$$
+* Upper Bound Weight
+$$ \bbox[yellow,20px]
+{
+Upper\,Bound\,Weight = 24.9 \times \Big(\frac{\,Heigth\,}{100}\,\,\Big)^2
+}
+$$
+
+* Weight expressed in kilogram (kg) given a Height expressed in centimeter (cm)
+
+* For example, adult person measuring 175 cm has healthy weight between 57 kg and 76 kg
+
+--- .class #id 
+
+## Demo
+
+* R function calculating healthy weight range (okg) of adult person given his/her height (cm)
+``` {r, eval=FALSE}
+okg <- function(cm) {round(c(18.5,24.9)*(cm/100)^2,0)}
+``` 
+* Healthy weight of adult person measuring 175 cm
+``` {r, eval=FALSE}
+okg(cm=175)
+``` 
+* Is between 57 kg and 76 kg
+``` {r, echo=FALSE}
+okg <- function(cm) {round(c(18.5,24.9)*(cm/100)^2,0)}
+okg(cm=175)
+``` 
+* Check it also out on http://piolivie.shinyapps.io/height-ok-weight/
+
+
